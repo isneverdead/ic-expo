@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+
+<!--
+     HTML code used with Epic Games HTML5 projects
+
+     much of this is for UE4 development purposes.
+
+     to create a custom HTML file for your project:
+     - make a copy of this file - or make one from scratch
+     - and put it in: "your project folder"/Build/HTML/GameX.html.template
+-->
+
+<html lang="en">
+
+<head>
+	<title>IC VIRTUAL EXPO</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="lt9unreallowervers-HTML5-Shipping.css" rel="stylesheet">
+	<script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<style>
+	.content {
+		margin: 1rem 2rem 1rem 2rem;
+	}
+
+	.title-content {
+		text-align: center;
+		font-size: 2rem;
+		font-weight: 800;
+		color: rgb(41, 41, 41);
+	}
+
+	.box-content {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+
+	}
+
+	.cara-main {
+		width: 40%;
+		margin: 0 auto;
+		border: 2px solid rgb(41, 41, 41);
+		border-radius: 5px;
+		padding: 1rem;
+	}
+
+	.audio-section {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.button-fullscreen {
+		background-color: rgb(16, 211, 255);
+		border: 2px solid rgb(53, 53, 53);
+		padding: 0.2rem 1rem;
+		color: white;
+		border-radius: 5px;
+	}
+</style>
+
+<body>
+
+	<div class="wrapper" id="mainarea">
+		<div class="alert alert-warning centered-axis-xy"
+			style="min-height: 20px; display:none; color: rgb(16, 211, 255); background-color: rgb(255, 255, 255);"
+			role="alert" id="compilingmessage">
+			<div id='loadTasks'> </div>
+		</div>
+		<!-- The "tabindex=0" specifier on the canvas is important to allow it to capture keyboard focus when clicking on it with a mouse -->
+		<canvas tabindex=0 id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" style="display:none;">
+	</div>
+	<div class="row buttonarea text-center" id="buttonrow">
+		<!-- <div x-data="{ open: false }">
+			<button x-on:click="open = ! open">Expand</button>
+
+			<span x-show="open">
+				Content...
+			</span>
+		</div> -->
+		<button type="button" class="button-fullscreen" id="fullscreen_request">FullScreen</button>
+		<!-- <div class="col-sm-2 text-center"></div> -->
+		<!-- <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="try { Module['pauseMainLoop'](); } catch(e) {console.error(e);}">Pause</button></div> -->
+		<!-- <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="try { Module['resumeMainLoop'](); } catch(e) {console.error(e);}">Resume</button></div> -->
+		<!-- <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="var w = document.getElementById('logwindow'); w.style.display = w.style.display ? '' : 'none';">Toggle Log</button></div> -->
+		<!-- <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" id='clear_indexeddb' onclick="try { deleteIndexedDBStorage(); } catch(e) {console.error(e);}">Clear IndexedDB</button></div> -->
+		<!-- <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary"
+				id="fullscreen_request">FullScreen</button></div> -->
+		<!-- <div class="col-sm-2 text-center"></div> -->
+		<!-- <div class="col-sm-2 text-center"></div> -->
+	</div>
+	<!-- <iframe width="854" height="480" style="display:none;"
+		src="https://www.youtube.com/watch?v=YgmanbDD3H4" frameborder="0"
+		allowfullscreen></iframe> -->
+
+	<div class="content">
+		<h1 class="title-content">Baca ini dulu yuk sambil nunggu loading ...</h1>
+		<div class="box-content">
+			<div class="cara-main">
+				Tunggu Loading Hingga Selesai.. lalu Klik Tombol <strong>Fullscreen</strong> dan jangan lupa
+				<strong>klik di
+					dalam game</strong> agar cursor hilang
+				<br />
+				<br />
+				Tekan <strong>W</strong> Untuk Bergerak Maju
+				<br />
+				Tekan <strong>S</strong> Untuk Bergerak Mundur
+				<br />
+				Tekan <strong>A/D</strong> Untuk Bergerak ke Kiri/Kanan
+				<br />
+				Tekan <strong>Space</strong> Untuk Loncat
+				<br />
+				Tekan <strong>E</strong> Untuk Berinteraksi dengan Marker Kuning
+				<br />
+				Tekan <strong>R</strong> Untuk Respawn ke tempat Awal
+			</div>
+			<div class="cara-main">
+				Yuk Explore Keseruanmu di IC Virtual Expo,
+				<br />
+				Kalau kamu menemukan <strong>Easter Egg</strong> atau <strong>Bug</strong> jangan lupa untuk
+				Record/Screenshot lalu <strong>upload</strong> ke IG Story
+				kamu dan <strong>Tag ke instagram</strong> <a
+					href="https://instagram.com/internetclub_id">@internetclub_id</a>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- <iframe width="1904" height="800" src="https://www.youtube.com/embed/YgmanbDD3H4?autoplay=1" " title=" YouTube video
+		player" frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe> -->
+
+	<!-- <iframe id="ytplayer" type="text/html" width="640" height="360"
+		src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		frameborder="0"></iframe> -->
+	<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/uwxJfj1I8_M?autoplay=1"
+		title="YouTube video player" frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe> -->
+	<div class="audio-section">
+
+		<audio controls autoplay>
+			<source src="bg-music2.mp3" type="audio/mpeg">
+
+			Your browser does not support the audio element.
+		</audio>
+	</div>
+	<div class="texthalf text-normal jumbotron " id="logwindow" style='display:none'></div>
+
+	<script src="lt9unreallowervers-HTML5-Shipping.UE4.js"></script>
+
+
+</body>
+
+</html>
